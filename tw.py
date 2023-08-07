@@ -20,6 +20,7 @@ todo:
       using: https://api.twitter.com/2/search/adaptive.json
     - implement user authentication.
 
+
 Author: Willem Hengeveld, itsme@xs4all.nl
 """
 
@@ -472,9 +473,9 @@ def main():
     parser.add_argument('--userinfo', action='store_true', help='print info by screenname')
     parser.add_argument('--tweetinfo', action='store_true', help='print info for a tweetid')
     parser.add_argument('--media', action='store_true', help='list media for the specified user')
-    parser.add_argument('--debug',  action='store_true', help='debug http requests')
-    parser.add_argument('--config', help='specify configuration file.', default='~/.twitterrc')
-    parser.add_argument('--authtoken', type=str)
+    parser.add_argument('--debug',  action='store_true', help=argparse.SUPPRESS)    # 'debug http requests'
+    parser.add_argument('--config', default='~/.twitterrc', help=argparse.SUPPRESS) # 'specify configuration file.'
+    parser.add_argument('--authtoken', type=str, help=argparse.SUPPRESS)
     parser.add_argument('ARGS', nargs='*', help='which items to list')
     args = parser.parse_args()
 
